@@ -1,0 +1,39 @@
+{
+  "name": "risala-backend",
+  "version": "1.0.0",
+  "description": "The backend server for the Risala chat app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon",
+    "postinstall": "prisma generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f3yad/risala.git"
+  },
+  "keywords": [
+    "chat",
+    "app",
+    "node",
+    "javascript",
+    "ws",
+    "websocket",
+    "real time"
+  ],
+  "author": "Feyad ElAhmed <feyad@feyad.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f3yad/risala/issues"
+  },
+  "homepage": "https://github.com/f3yad/risala#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "prisma": "^6.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
