@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config();
+const userRoute = require("./src/routes/user");
+const errorHandler = require("./src/middlewares/errorHandler");
 
 // server app init
 const app = express();
@@ -14,11 +16,19 @@ app.get("/", (req, res) => {
   });
 });
 
+
+// routes
+app.use("/user", userRoute);
+
+
+// global error handler
+app.use(errorHandler)
+
 // server listener
 const PORT = process.env.PORT || 3300;
-app.listen(PORT, (err) => {
-  if (err) {
-    console.log(err);
+app.listen(PORT, (error) => {
+  if (error) {
+    console.log(error);
     exit(1);
   }
 
